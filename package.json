@@ -4,21 +4,27 @@
   "private": true,
   "homepage": "https://denyshnatiuk.github.io/dh/",
   "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@tailwindcss/forms": "^0.3.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "aos": "^2.3.4",
+    "babel-preset-react-app": "^10.0.0",
+    "purgecss": "^3.1.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy":"gh-pages -d build"
+    "start": "craco start",
+    "build": "craco build",
+    "build:style": "tailwind build -i src/index.css -o src/tailwind.css",
+    "test": "craco test",
+    "eject": "craco eject",
+    "predeploy": "craco build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +45,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "autoprefixer": "^9.8.6",
+    "gh-pages": "^3.2.3",
+    "postcss": "^7.0.36",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4"
   }
 }
